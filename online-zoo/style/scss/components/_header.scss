@@ -90,13 +90,17 @@
         font-weight: 600;
         font-size: 18px;
         line-height: 150%;
+        transition: color 0.2s ease;
       }
 
-      a.highlight,
-      a:hover {
+
+      a.highlight {
         color: #00A092;
       }
 
+      a:hover {
+        color: yellow;
+      }
     }
   }
 
