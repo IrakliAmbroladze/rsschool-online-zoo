@@ -24,24 +24,40 @@
     display: flex;
     flex-direction: column;
     height: 30px;
-    width: 30px;
+    width: 22px;
     justify-content: space-between;
-    margin-right: 17px;
+    margin-right: 16px;
 
     div {
-      width: 30px;
       height: 2px;
       background-color: black;
     }
   }
+
+  .nav {
+    display: none
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 400px) {
   .header {
-    .nav {
-      display: none;
+    .burger-menu {
+      width: 30px;
+      margin-right: 27px;
     }
   }
+}
 
+@media (min-width: 700px) {
+  .header {
+    padding: 30px 100px;
 
+    .burger-menu {
+      display: none
+    }
+
+    .nav {
+      display: block;
+    }
+  }
 }
