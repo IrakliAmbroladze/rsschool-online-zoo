@@ -1,3 +1,4 @@
+@use "../abstracts/" as *;
 @use "../components/_button.scss";
 
 .page-landing {
@@ -52,6 +53,52 @@
 
     }
 
+  }
+
+  .welcome {
+    margin: 50px 0;
+
+    .welcome-card-1,
+    .welcome-card-2 {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+
+      .welcome-image {
+        order: 1
+      }
+
+      .welcome-text-content {
+        order: 2;
+      }
+    }
+
+    h2 {
+      color: $color-green;
+      width: 100%;
+      font-weight: 600;
+      font-size: 26px;
+      text-transform: uppercase;
+    }
+
+    .welcome-text-content {
+      margin: 30px 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .welcome-image {
+      width: 100%;
+
+      height: 218px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }
 
