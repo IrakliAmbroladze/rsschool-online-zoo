@@ -1,3 +1,8 @@
 @use "abstracts";
 @use "base/global";
 @use "components/header";
+
+@use "pages/landing";
+@use "pages/map";
+@use "pages/zoos";
+@use "pages/contact-us";
