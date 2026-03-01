@@ -54,8 +54,8 @@
       position: absolute;
       top: 40px;
       right: 35px;
-      width: 29px;
-      height: 29px;
+      width: 30px;
+      height: 30px;
       cursor: pointer;
 
       .close-line-1,
@@ -64,7 +64,7 @@
         top: 50%;
         left: 50%;
 
-        width: 29px;
+        width: 30px;
         height: 2px;
         background-color: white;
 
@@ -114,6 +114,19 @@
     .burger-menu {
       width: 30px;
       margin-right: 27px;
+    }
+
+    .burger-modal.show-burger-modal {
+      height: 754px;
+      width: 311px;
+
+      .close-modal {
+        right: 45px;
+      }
+    }
+
+    .burger-nav {
+      gap: 50px;
     }
   }
 }
