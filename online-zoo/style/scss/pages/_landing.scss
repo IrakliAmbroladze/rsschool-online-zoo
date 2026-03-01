@@ -106,6 +106,61 @@
       }
     }
   }
+
+  .donation {
+
+    .container {
+      background-color: $color-background-secondary;
+      @include flex-column-center;
+      padding: 30px 10px 40px;
+      color: white;
+      gap: 30px;
+
+      h1 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 26px;
+        text-transform: uppercase;
+      }
+
+      p {
+        text-align: center;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+      }
+
+      .quick-donate {
+        width: 100%;
+
+        @include flex-column-center;
+
+        gap: 10px;
+
+        h3 {
+          font-weight: 500;
+          font-size: 26px;
+          line-height: 130%;
+        }
+
+        .amount {
+          width: 100%;
+          height: 45px;
+          border: 1px solid white;
+          border-radius: 5px;
+          @include flex-row-center;
+
+          .donation-amount {
+            margin: 12px 26px;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            min-width: 188px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 600px) {
