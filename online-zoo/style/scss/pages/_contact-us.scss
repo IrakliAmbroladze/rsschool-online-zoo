@@ -91,6 +91,46 @@
   }
 }
 
+@media(min-width: 400px) {
+  .page-contact-us {
+    .main {
+      .container {
+
+        .form-container {
+          padding: 50px 10px 100px;
+
+          .info {
+
+            h1 {
+              font-size: 54px;
+              font-weight: 600;
+            }
+
+            p {
+              max-width: 835px;
+
+            }
+          }
+
+          form {
+            max-width: 835px;
+
+            input {
+              height: 60px;
+            }
+
+            .btn {
+              width: 290px;
+              height: 74px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 @media(min-width: 1440px) {
   .page-contact-us {
