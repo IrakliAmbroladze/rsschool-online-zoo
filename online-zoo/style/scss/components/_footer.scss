@@ -10,6 +10,8 @@
 
       @include flex-column-center;
 
+      gap: 30px;
+
       .logos {
         @include flex-column-center;
         gap: 30px;
@@ -50,27 +52,19 @@
         }
       }
 
-    }
-
-    .navigations-container {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-
-      gap: 30px;
-
       .nav {
-        gap: 10px;
+        width: 100%;
+        @include flex-row-center;
+        justify-content: space-between;
 
         .nav-link {
           text-transform: uppercase;
           font-weight: 600;
-          font-size: 18px;
-          line-height: 150%;
+          font-size: 16px;
+          line-height: 100%;
           color: white;
           transition: color 0.2s ease;
         }
-
 
         .nav-link.highlight {
           color: #00A092;
@@ -80,6 +74,16 @@
           color: yellowgreen;
         }
       }
+
+    }
+
+    .navigations-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 30px;
+
 
       .soc-media-container {
         @include flex-row-center;
