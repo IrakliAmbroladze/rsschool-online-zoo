@@ -58,6 +58,10 @@
           text-transform: uppercase;
           min-width: 188px;
         }
+
+        button:hover {
+          background-color: $orange-dark
+        }
       }
     }
   }
