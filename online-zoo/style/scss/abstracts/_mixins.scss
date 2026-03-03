@@ -11,3 +11,12 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin shadow($color,
+  $x: 0,
+  $y: 4px,
+  $blur: 30px,
+  $spread: 0,
+  $opacity: 0.3) {
+  box-shadow: $x $y $blur $spread rgba($color, $opacity);
+}

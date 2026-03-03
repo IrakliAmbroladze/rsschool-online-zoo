@@ -37,6 +37,11 @@
           margin-left: 10px
         }
       }
+
+      button:hover {
+        @include shadow($orange);
+        background-color: $orange-dark;
+      }
     }
 
     .cover-image {
