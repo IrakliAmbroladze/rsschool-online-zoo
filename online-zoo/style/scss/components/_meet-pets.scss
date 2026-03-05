@@ -88,60 +88,38 @@
             text-transform: uppercase;
             margin-right: 10px
           }
-
         }
       }
-    }
-
-
-
-
-    .viewport {
-      overflow: hidden;
-
-      .track {
-        display: flex;
-        flex-wrap: nowrap;
-        transition: transform 0.4s ease;
-
-        .column {
-          flex: 0 0 33.333%; // 3 columns desktop
-          display: flex;
-          flex-direction: column;
-
-          .item {
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-          }
-
-          /* Mobile: 1 column */
-          @media (max-width: 599px) {
-            .item {
-              flex: 0 0 100%;
-            }
-          }
-
-          /* Desktop: 3 columns */
-          @media (min-width: 1024px) {
-            .item {
-              flex: 0 0 33.3333%;
-            }
-          }
-
-          /* Tablet: 2 columns */
-          @media (min-width: 600px) and (max-width: 1023px) {
-            .item {
-              flex: 0 0 50%;
-            }
-          }
-        }
-      }
-
     }
   }
+}
 
+@media(min-width: 640px) {
+  .meet-pets {
+    .container {
+      padding: 100px 20px;
+      gap: 30px;
+
+      h2 {
+        font-weight: 600;
+        font-size: 54px;
+        max-width: 394px;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 130%;
+        padding: 0;
+      }
+
+      .slider-pets-in-zoo {
+        padding: 0;
+
+        .animals-card {
+          width: 290px;
+        }
+      }
+    }
+  }
 }
