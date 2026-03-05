@@ -55,7 +55,7 @@
         width: 100%;
         @include flex-row-center;
         justify-content: space-between;
-        max-width: 400px;
+        max-width: 450px;
 
         .nav-link {
           text-transform: uppercase;
@@ -66,13 +66,6 @@
           transition: color 0.2s ease;
         }
 
-        .nav-link.highlight {
-          color: #00A092;
-        }
-
-        .nav-link:hover {
-          color: yellowgreen;
-        }
       }
 
       .btn {
