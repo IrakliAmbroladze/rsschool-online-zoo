@@ -5,23 +5,29 @@
 
   .container {
     padding: 50px 0;
+
     @include flex-column-center;
     gap: 30px;
 
-    h2 {
-      color: $turquoise;
-      font-weight: 500;
-      font-size: 26px;
-      text-align: center;
-      text-transform: uppercase;
-    }
+    .intro {
+      @include flex-column-center;
+      gap: 30px;
 
-    p {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 150%;
-      text-align: center;
-      padding: 0 10px;
+      h2 {
+        color: $turquoise;
+        font-weight: 500;
+        font-size: 26px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        text-align: center;
+        padding: 0 10px;
+      }
     }
 
     .slider-pets-in-zoo {
@@ -69,18 +75,21 @@
           font-weight: 500;
           font-size: 26px;
           line-height: 130%;
+          text-align: center;
         }
 
         p {
-
+          padding: 0 25px;
           font-weight: 400;
           font-size: 18px;
           line-height: 150%;
+          text-align: center;
         }
 
         button {
           width: 240px;
           height: 73px;
+          transition: background-color 200ms ease;
 
           span {
             font-weight: 600;
@@ -89,7 +98,33 @@
             margin-right: 10px
           }
         }
+
+        button:hover {
+          background-color: $orange;
+          color: white;
+        }
+
       }
+    }
+
+    .btn-favorite {
+      display: none;
+      width: 400px;
+      height: 74px;
+      border: 1px solid $navy;
+      transition: background-color 0.2s ease;
+
+      span {
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-right: 10px
+      }
+    }
+
+    .btn-favorite:hover {
+      background-color: $navy;
+      color: white;
     }
   }
 }
@@ -98,19 +133,22 @@
   .meet-pets {
     .container {
       padding: 100px 20px;
-      gap: 30px;
+      gap: 50px;
 
-      h2 {
-        font-weight: 600;
-        font-size: 54px;
-        max-width: 394px;
-      }
+      .intro {
 
-      p {
-        font-weight: 500;
-        font-size: 26px;
-        line-height: 130%;
-        padding: 0;
+        h2 {
+          font-weight: 600;
+          font-size: 54px;
+          max-width: 394px;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 26px;
+          line-height: 130%;
+          padding: 0;
+        }
       }
 
       .slider-pets-in-zoo {
@@ -119,6 +157,10 @@
         .animals-card {
           width: 290px;
         }
+      }
+
+      .btn-favorite {
+        @include flex-row-center
       }
     }
   }
