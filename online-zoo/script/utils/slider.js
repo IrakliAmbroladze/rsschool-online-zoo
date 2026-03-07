@@ -9,28 +9,21 @@ export const slider = () => {
   const viewport = container.offsetWidth - xCoordinate * 2; //deducting padding
   const slider_overflow = slider_width - viewport;
   const slider_styles = window.getComputedStyle(slider);
-  const gap = slider_styles.getPropertyValue("gap");
-  const gap_number = Number(gap.slice(0, -2));
+  const gap = Number(slider_styles.getPropertyValue("gap").slice(0, -2));
   const card_width = document.querySelector(".animals-card").offsetWidth;
 
-  let counter = 0;
   const step_width = card_width + gap;
+  console.log(step_width);
+  let accumulated_transformation = 0;
   left_arrow.addEventListener("click", () => {
-    if (counter > -1) {
-      return;
-    }
-    counter++;
-    console.log(counter);
+    accumulated_transformation += step_width;
     console.log("clicked on left arrow");
-    slider.style.transform = `translate(${counter * step_width}px)`;
+    slider.style.transform = `translate(${accumulated_transformation}px)`;
   });
   right_arrow.addEventListener("click", () => {
-    if (counter < 0) {
-      return;
-    }
-    counter--;
-    console.log(counter);
+    accumulated_transformation -= step_width;
+    console.log(accumulated_transformation);
     console.log("clicked on right arrow");
-    slider.style.transform = `translate(${counter * step_width}px)`;
+    slider.style.transform = `translate(${accumulated_transformation}px)`;
   });
 };
