@@ -1,4 +1,4 @@
-import { slider } from "./utils/slider.js";
+import { create_slider } from "./utils/slider/create_slider.js";
 async function loadComponent(selector, url) {
   const el = document.querySelector(selector);
   const res = await fetch(url);
@@ -35,7 +35,7 @@ const slider_container = document.getElementById("slider");
 
 const container = document.getElementById("pets-container");
 const viewport = container.offsetWidth - 80; //deducting padding
-slider({
+create_slider({
   prev_btn: left_arrow,
   next_btn: right_arrow,
   slider: slider_container,

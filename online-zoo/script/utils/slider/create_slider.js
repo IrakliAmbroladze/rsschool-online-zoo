@@ -1,16 +1,17 @@
-export const slider = ({
+import { calculate_metrics } from "./calculate_metrics.js";
+
+export const create_slider = ({
   prev_btn,
   next_btn,
   slider,
   viewport,
   cardSelector,
 }) => {
-  const slider_width = slider.offsetWidth;
-  const slider_overflow = slider_width - viewport;
-  const slider_styles = window.getComputedStyle(slider);
-  const gap = parseFloat(slider_styles.getPropertyValue("gap"));
-  const card_width = slider.querySelector(cardSelector).offsetWidth;
-  const step_width = card_width + gap;
+  const { slider_overflow, step_width } = calculate_metrics({
+    slider,
+    viewport,
+    cardSelector,
+  });
 
   let offset = 0;
   prev_btn.addEventListener("click", () => {
