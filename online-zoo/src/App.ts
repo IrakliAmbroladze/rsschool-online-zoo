@@ -1,9 +1,11 @@
 import { Header } from "./components/Header";
+import { MeetPets } from "./components/MeetPets";
 import { user } from "./constants/user";
 import { create_slider } from "./utils/slider/create_slider";
 
-export default function App() {
+export default async function App() {
   Header({ user });
+  await MeetPets();
   const container = document.getElementById("pets-container");
   if (!container) return;
   const left_arrow = document.getElementById("sldr_left_arr");
