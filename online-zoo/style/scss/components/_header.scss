@@ -65,6 +65,7 @@
 
             button {
               padding: 5px 10px;
+              transition: transform 150ms ease-in-out;
             }
 
             button:active {
@@ -73,6 +74,21 @@
 
             .register {
               background-color: $navy
+            }
+          }
+
+          .logged-in {
+            @include flex-column-center;
+            gap: 10px;
+
+            button {
+              padding: 5px 10px;
+              transition: transform 150ms ease-in-out;
+              max-width: 200px;
+            }
+
+            button:active {
+              transform: scale(0.98);
             }
           }
         }
