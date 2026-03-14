@@ -1,9 +1,5 @@
-type Pet = {
-  commonName: string;
-  description: string;
-  id: number;
-  name: string;
-};
+import type { ApiResponse } from "../types/ApiResponse";
+import type { Pet } from "../types/Pet";
 
 export const fetchPets = async (): Promise<Pet[]> => {
   const URL =
@@ -14,6 +10,6 @@ export const fetchPets = async (): Promise<Pet[]> => {
     throw new Error(`Request failed: ${response.status}`);
   }
 
-  const { data } = await response.json();
-  return data;
+  const result: ApiResponse<Pet[]> = await response.json();
+  return result.data;
 };
