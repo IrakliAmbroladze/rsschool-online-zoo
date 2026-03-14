@@ -59,7 +59,7 @@
           border-radius: 8px;
           padding: 20px 20px;
 
-          .logged-in {
+          .non-logged-in {
             @include flex-row-center;
             gap: 10px;
 
