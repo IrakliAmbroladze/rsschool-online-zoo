@@ -10,6 +10,7 @@ export default defineConfig({
         zoos: resolve(__dirname, "zoos/index.html"),
         contactUs: resolve(__dirname, "contact-us/index.html"),
         registration: resolve(__dirname, "registration/index.html"),
+        signIn: resolve(__dirname, "sign-in/index.html"),
       },
     },
   },
