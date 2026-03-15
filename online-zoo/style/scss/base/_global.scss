@@ -43,5 +43,14 @@ a {
 }
 
 form {
-  @include flex-column-center
+  @include flex-column-center;
+  margin: 20px 0;
+
+  input {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: -1px 2px 4px -3px black;
+  }
 }
