@@ -3,11 +3,11 @@ import { Header } from "./components/Header";
 import { MeetPets } from "./components/MeetPets";
 import { REGISTRATION_INPUTS } from "./constants/registration";
 import { createForm } from "./utils/createForm";
-// import { user } from "./constants/user";
 import { create_slider } from "./utils/slider/create_slider";
 
 export default async function App() {
-  Header({ user: null });
+  const user = JSON.parse(localStorage.getItem("user") || "");
+  Header({ user });
 
   const page = document.body.className;
 
