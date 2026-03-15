@@ -7,7 +7,7 @@ export const MeetPets = async (): Promise<void> => {
   if (!container) return;
 
   container.innerHTML = `
-    <div class="pets-loader">
+    <div class="loader">
       Loading pets...
     </div>
   `;
@@ -48,7 +48,7 @@ export const MeetPets = async (): Promise<void> => {
     }
 
     container.innerHTML = `
-      <div class="pets-error">
+      <div class="error">
         <p>Something went wrong. Please, refresh the page</p>
       </div>
     `;
