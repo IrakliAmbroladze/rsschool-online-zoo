@@ -25,6 +25,11 @@
     color: white;
   }
 
+  &--pure-text-white {
+    color: $white;
+    background-color: transparent;
+  }
+
   &--pure-text-orange {
     color: $orange;
     background-color: transparent;
