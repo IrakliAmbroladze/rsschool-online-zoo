@@ -177,7 +177,7 @@
       @include flex-column-center;
       justify-content: space-between;
 
-      .users-think-slider-container {
+      .feedback-container {
         align-self: end;
         --card-width: 515px;
         --card-height: 463px;
@@ -188,7 +188,7 @@
         grid-auto-flow: column;
         transition: transform 700ms ease;
 
-        .users-think-card {
+        .feedback-card {
           width: var(--card-width);
           height: var(--card-height);
           background-color: $white;
