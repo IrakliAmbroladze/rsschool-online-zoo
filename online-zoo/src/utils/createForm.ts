@@ -1,6 +1,7 @@
 type Input = {
   type: string;
   placeholder?: string;
+  name: string;
 };
 
 type CreateFormProps = {
@@ -22,7 +23,7 @@ export const createForm = ({
   elForm?.appendChild(form);
   inputs.map((input) => {
     const elInput = `
-    <input type=${input.type} placeholder=${input.placeholder ? input.placeholder : ""}>
+    <input type=${input.type} placeholder=${input.placeholder ? input.placeholder : ""} name=${input.name}>
 `;
     form.insertAdjacentHTML("beforeend", elInput);
   });
@@ -31,6 +32,6 @@ export const createForm = ({
   btnSubmit.textContent = "submit";
   btnSubmit.classList.add("btnSubmit");
   btnSubmit.classList.add("btn");
-  btnSubmit.classList.add("btn--green");
+  btnSubmit.classList.add("btn--orange");
   form.appendChild(btnSubmit);
 };

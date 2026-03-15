@@ -63,4 +63,8 @@ form {
   .btnSubmit:active {
     transform: scale(0.95)
   }
+
+  .btnSubmit:hover {
+    background-color: $orange-dark
+  }
 }
