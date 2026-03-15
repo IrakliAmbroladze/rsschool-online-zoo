@@ -19,11 +19,14 @@ export const Feedbacks = async (): Promise<void> => {
     feedbacks.forEach((feedback) => {
       const element = `
     <div class="feedback-card">
-      <label>${feedback.city}</label>
-      <label>${feedback.month}</label>
-      <label>${feedback.year}</label>
+      <div class="quote-icon">
+          <img src="/assets/icons/quote.svg" alt="quote">
+      </div>     
+      <h2 class="title">
+      <label>${feedback.city}</label>, <label>${feedback.month}</label> <label>${feedback.year}</label>
+      </h2>
       <p>${feedback.text}</p>
-      <div class="title">${feedback.name}</div>
+      <div class="feedback-author">${feedback.name}</div>
     </div>
   `;
 
