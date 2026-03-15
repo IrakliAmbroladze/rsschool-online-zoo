@@ -23,21 +23,31 @@ export const create_slider = ({
 
   let offset = 0;
 
-  const moveLeft = () => {
-    offset += step_width;
-    if (offset > 0) {
-      offset = -slider_overflow;
-    }
-    slider.style.transform = `translateX(${offset}px)`;
-  };
   const moveRight = () => {
-    offset -= step_width;
-    if (offset < -slider_overflow) {
+    const remaining = slider_overflow + offset;
+
+    if (remaining <= 0) {
       offset = 0;
+    } else if (remaining < step_width) {
+      offset -= remaining;
+    } else {
+      offset -= step_width;
     }
+
     slider.style.transform = `translateX(${offset}px)`;
   };
 
+  const moveLeft = () => {
+    if (offset >= 0) {
+      offset = -slider_overflow;
+    } else if (-offset < step_width) {
+      offset = 0;
+    } else {
+      offset += step_width;
+    }
+
+    slider.style.transform = `translateX(${offset}px)`;
+  };
   prev_btn.addEventListener("click", moveLeft);
   next_btn.addEventListener("click", moveRight);
 };
