@@ -45,6 +45,7 @@ a {
 form {
   @include flex-column-center;
   margin: 20px 0;
+  max-width: 250px;
 
   .input-wrapper {
     display: flex;
@@ -55,11 +56,12 @@ form {
   }
 
   input {
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: 1px solid black;
     border-radius: 4px;
     box-shadow: -1px 2px 4px -3px black;
-    transition: border-color 0.2s;
+    transition: border-color 200ms ease;
+    min-width: 250px;
 
     &.input--invalid {
       border-color: #e53935;
@@ -68,7 +70,7 @@ form {
   }
 
   .input-error {
-    font-size: 12px;
+    font-size: 9px;
     color: #e53935;
     min-height: 16px;
     margin-top: 2px;
@@ -77,7 +79,7 @@ form {
 
   .form-server-error {
     color: #e53935;
-    font-size: 14px;
+    font-size: 10px;
     margin-top: 8px;
     min-height: 20px;
     text-align: center;
