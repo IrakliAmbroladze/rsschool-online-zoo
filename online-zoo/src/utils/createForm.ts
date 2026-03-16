@@ -90,11 +90,10 @@ export const createForm = ({
   });
 
   const btnSubmit = document.createElement("button");
+  btnSubmit.disabled = true;
   btnSubmit.type = "submit";
   btnSubmit.textContent = "submit";
-  btnSubmit.classList.add("btn-submit");
-  btnSubmit.classList.add("btn");
-  btnSubmit.classList.add("btn--orange");
+  btnSubmit.classList.add("btn-submit", "btn", "btn--orange");
   form.appendChild(btnSubmit);
 
   const serverErr = document.createElement("p");
@@ -108,6 +107,8 @@ export const createForm = ({
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    btnSubmit.disabled = true;
+    btnSubmit.textContent = "loading";
     serverErr.textContent = "";
     const body: Record<string, string> = {};
     inputs.forEach((input) => {
@@ -153,6 +154,9 @@ export const createForm = ({
         console.error("Caught an unknown error type:", err);
       }
       serverErr.textContent = "Network error. Please try again.";
+    } finally {
+      btnSubmit.disabled = false;
+      btnSubmit.textContent = "submit";
     }
   });
 };
