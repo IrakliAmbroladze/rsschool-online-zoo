@@ -19,7 +19,7 @@ export const MeetPets = async (): Promise<void> => {
 
     pets.forEach((pet) => {
       const animal =
-        Object.values(PETS).find((petName) =>
+        Object.keys(PETS).find((petName) =>
           pet.commonName.toLowerCase().includes(petName),
         ) || "koala";
 

@@ -2,6 +2,18 @@ import { fetchCameras } from "../lib/fetchCameras";
 import type { Camera } from "../types/Camera";
 
 export default async function Zoos() {
+  enum Numbers {
+    zero,
+    one,
+    two,
+    three,
+  }
+
+  console.log("number one is: ", typeof Numbers[2]);
+  console.log("number one is: ", Numbers.one);
+  console.log("number one is: ", Numbers.two);
+  console.log("number one is: ", Numbers.three);
+
   const container = document.getElementById("cameras-container");
   if (!container) return;
 
