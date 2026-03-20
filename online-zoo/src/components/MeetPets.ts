@@ -7,20 +7,19 @@ export const MeetPets = async (): Promise<void> => {
   if (!container) return;
 
   container.innerHTML = `
-    <div class="pets-loader">
+    <div class="loader">
       Loading pets...
     </div>
   `;
 
   try {
     const pets: Pet[] = await fetchPets();
-    console.log(pets);
 
     container.innerHTML = "";
 
     pets.forEach((pet) => {
       const animal =
-        Object.values(PETS).find((petName) =>
+        Object.keys(PETS).find((petName) =>
           pet.commonName.toLowerCase().includes(petName),
         ) || "koala";
 
@@ -49,7 +48,7 @@ export const MeetPets = async (): Promise<void> => {
     }
 
     container.innerHTML = `
-      <div class="pets-error">
+      <div class="error">
         <p>Something went wrong. Please, refresh the page</p>
       </div>
     `;

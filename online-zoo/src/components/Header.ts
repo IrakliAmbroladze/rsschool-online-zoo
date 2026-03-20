@@ -26,12 +26,20 @@ export const Header = ({ user }: HeaderProps): void => {
   if (notLoggedIn) notLoggedIn.style.display = user ? "none" : "flex";
   const elUserLogged = document.querySelector(".logged-in");
   if (elUserLogged && user) {
-    elUserLogged.innerHTML = `
-          <div>name: ${user.name}</div>
-          <div>${user.email}</div>
-          <button id="btn-sign-in" class="btn btn--orange">
-              Sign&nbspOut
-           </button>
-`;
+    const elName = document.createElement("div");
+    elName.textContent = `name: ${user.name}`;
+    const elEmail = document.createElement("div");
+    elEmail.textContent = user.email;
+
+    const elBtn = document.createElement("button");
+    elBtn.textContent = `Sign Out`;
+    elBtn.classList.add("btn");
+    elBtn.classList.add("btn--orange");
+    elUserLogged.append(elName, elEmail, elBtn);
+    elBtn.addEventListener("click", () => {
+      console.log("clicked on btn");
+      localStorage.clear();
+      window.location.href = "/sign-in/";
+    });
   }
 };
