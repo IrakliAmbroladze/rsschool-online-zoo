@@ -7,11 +7,13 @@
 // import { createForm } from "./utils/createForm";
 
 import { Route, Routes } from "react-router-dom";
+import { Header } from "./components/Header";
 
 // import { create_slider } from "./utils/slider/create_slider";
 export default function App() {
   return (
     <div>
+      <Header />
       <h1>start online-zoo</h1>
       <Routes>
         <Route path="/" element={<div>something</div>} />
