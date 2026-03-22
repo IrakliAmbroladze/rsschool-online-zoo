@@ -8,6 +8,7 @@
 
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 // import { create_slider } from "./utils/slider/create_slider";
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<div>something</div>} />
       </Routes>
+      <Footer />
     </>
   );
 }
