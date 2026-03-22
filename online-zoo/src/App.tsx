@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Home } from "./components/Home";
+import { Map } from "./components/Map";
 
 // import { create_slider } from "./utils/slider/create_slider";
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/map" element={<Map />} />
       </Routes>
       <Footer />
     </>
