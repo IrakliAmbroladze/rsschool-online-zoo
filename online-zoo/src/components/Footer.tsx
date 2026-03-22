@@ -17,18 +17,18 @@ export const Footer = () => {
             </Link>
           </div>
           <nav className="nav">
-            <a href="/" className="nav-link">
+            <Link to="/" className="nav-link">
               About
-            </a>
-            <a href="/map/" className="nav-link">
+            </Link>
+            <Link to="/map/" className="nav-link">
               Map
-            </a>
-            <a href="/zoos/" className="nav-link">
+            </Link>
+            <Link to="/zoos/" className="nav-link">
               Zoos
-            </a>
-            <a href="/contact-us/" className="nav-link">
+            </Link>
+            <Link to="/contact-us/" className="nav-link">
               Contact us
-            </a>
+            </Link>
           </nav>
           <button className="btn">
             <span>Donate for volunteers</span>

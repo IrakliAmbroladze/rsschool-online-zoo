@@ -4,9 +4,9 @@ export const Header = () => {
   return (
     <header id="header" className="header">
       <div className="container">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           <img src="/assets/images/logo.svg" alt="logo" />
-        </a>
+        </Link>
         <div className="header-right">
           <div className="navigations-container">
             <nav className="nav">
