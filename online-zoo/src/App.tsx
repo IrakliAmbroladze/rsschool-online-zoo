@@ -41,12 +41,6 @@ export default function App() {
 }
 
 // export default async function App() {
-//   let user;
-//   const userFromStorage = localStorage.getItem("user");
-//   if (userFromStorage) {
-//     user = JSON.parse(userFromStorage);
-//   }
-//   Header({ user });
 //
 //   const page = document.body.className;
 //
