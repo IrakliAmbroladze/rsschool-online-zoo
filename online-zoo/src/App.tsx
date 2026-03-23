@@ -1,12 +1,9 @@
 // import { Feedbacks } from "./components/Feedbacks";
-// import { Header } from "./components/Header";
 // import { MeetPets } from "./components/MeetPets";
 // import Zoos from "./components/Zoos";
 // import { REGISTRATION_INPUTS } from "./constants/registration";
 // import { SIGN_IN_INPUTS } from "./constants/signin";
 // import { createForm } from "./utils/createForm";
-// import { Header } from "./components/Header";
-// import { Footer } from "./components/Footer";
 // import { Route, Routes } from "react-router-dom";
 // import Home from "./components/Home";
 // import Map from "./components/Map";
