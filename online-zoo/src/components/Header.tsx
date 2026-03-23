@@ -1,6 +1,12 @@
+import type { JSX } from "react";
+import type { User } from "../types/User";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+type HeaderProps = {
+  user: User | null;
+};
+export const Header = ({ user }: HeaderProps): JSX.Element => {
+  console.log(user);
   return (
     <header id="header" className="header">
       <div className="container">
@@ -53,7 +59,9 @@ export const Header = () => {
               <li className="user-icon-container">
                 <img src="/assets/icons/circle-user.svg" alt="user-icon" />
               </li>
-              <li className="user-name" id="user-name"></li>
+              <li className="user-name" id="user-name">
+                {user && user.name}
+              </li>
             </ul>
             <div id="user-modal" className="user-modal">
               <div className="non-logged-in">

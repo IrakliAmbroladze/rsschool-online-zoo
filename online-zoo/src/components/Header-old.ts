@@ -1,9 +1,4 @@
-import type { User } from "../types/User";
 import { createModal } from "../utils/createModal";
-
-type HeaderProps = {
-  user: User | null;
-};
 
 export const Header = ({ user }: HeaderProps): void => {
   const usernameEl = document.getElementById("user-name");

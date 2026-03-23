@@ -21,11 +21,23 @@ import { Home } from "./components/Home";
 import { Map } from "./components/Map";
 import { ContactUs } from "./components/ContactUs";
 import { Zoos } from "./components/Zoos";
+import type { User } from "./types/User";
+import { useState } from "react";
 
 export default function App() {
+  const [user] = useState<User | null>(() => {
+    const userData = localStorage.getItem("user");
+    if (!userData) return null;
+
+    try {
+      return JSON.parse(userData);
+    } catch {
+      return null;
+    }
+  });
   return (
     <div className="project-wrapper">
-      <Header />
+      <Header user={user} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/map" element={<Map />} />
