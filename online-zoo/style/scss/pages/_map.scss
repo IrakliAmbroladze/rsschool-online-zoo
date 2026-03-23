@@ -1,6 +1,8 @@
 @use "../abstracts/" as *;
 
 .page-map {
+  flex: 1;
+
   .main {
     .container {
       @include flex-column-center;

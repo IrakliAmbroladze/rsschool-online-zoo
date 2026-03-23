@@ -107,3 +107,13 @@ form {
     }
   }
 }
+
+#root {
+  height: 100dvh;
+}
+
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
