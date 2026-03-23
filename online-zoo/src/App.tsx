@@ -22,19 +22,10 @@ import { Map } from "./components/Map";
 import { ContactUs } from "./components/ContactUs";
 import { Zoos } from "./components/Zoos";
 import type { User } from "./types/User";
-import { useState } from "react";
+import { getUser } from "./utils/getUser";
 
 export default function App() {
-  const [user] = useState<User | null>(() => {
-    const userData = localStorage.getItem("user");
-    if (!userData) return null;
-
-    try {
-      return JSON.parse(userData);
-    } catch {
-      return null;
-    }
-  });
+  const user: User | null = getUser();
   return (
     <div className="project-wrapper">
       <Header user={user} />
@@ -48,18 +39,6 @@ export default function App() {
     </div>
   );
 }
-
-//
-// function App() {
-//   return (
-//     <div className="flex flex-col h-dvh">
-//       <Header />
-//       <main className="flex-1">
-//       </main>
-//       <Footer />
-//     </div>
-//   );
-// }
 
 // export default async function App() {
 //   let user;
