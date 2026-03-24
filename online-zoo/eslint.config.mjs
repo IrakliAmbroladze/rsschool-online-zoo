@@ -1,6 +1,3 @@
-// @ts-check
-
-import eslint from "@eslint/js";
 import js from "@eslint/js";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -10,7 +7,6 @@ import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig(
   js.configs.recommended,
-  eslint.configs.recommended,
   tseslint.configs.strict,
   tseslint.configs.stylistic,
   reactHooks.configs.flat.recommended,
@@ -23,7 +19,14 @@ export default defineConfig(
 
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/consistent-type-definitions": "off",
-      "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          varsIgnorePattern: "^[A-Z_]",
+          argsIgnorePattern: "^_",
+        },
+      ],
     },
     languageOptions: {
       globals: globals.browser,
