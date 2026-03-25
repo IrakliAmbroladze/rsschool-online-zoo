@@ -8,6 +8,7 @@ type HeaderProps = {
 };
 export const Header = ({ user }: HeaderProps): JSX.Element => {
   const [isUserModalOpen, setIsUserModalOpen] = useState(false);
+  const [isBurgerModalOpen, setIsBurgerModalOpen] = useState(false);
   return (
     <header id="header" className="header">
       <div className="container">
@@ -76,38 +77,40 @@ export const Header = ({ user }: HeaderProps): JSX.Element => {
               />
             )}
           </div>
-          <div className="burger-menu">
+          <div className="burger-menu ">
             <div></div>
             <div></div>
             <div></div>
           </div>
-          <div className="burger-modal">
-            <div className="close-modal">
-              <div className="close-line-1"></div>
-              <div className="close-line-2"></div>
+          {isBurgerModalOpen && (
+            <div className="burger-modal show-burger-modal">
+              <div className="close-modal">
+                <div className="close-line-1"></div>
+                <div className="close-line-2"></div>
+              </div>
+              <nav className="burger-nav">
+                <a href="/" className="nav-link">
+                  About
+                </a>
+                <a href="/map/" className="nav-link">
+                  Map
+                </a>
+                <a href="/zoos/" className="nav-link">
+                  Zoos
+                </a>
+                <a href="/contact-us/" className="nav-link">
+                  Contact us
+                </a>
+                <a
+                  href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=uVdleYXKyMAVDa9i-0"
+                  className="nav-link"
+                  target="_blank"
+                >
+                  Design
+                </a>
+              </nav>
             </div>
-            <nav className="burger-nav">
-              <a href="/" className="nav-link">
-                About
-              </a>
-              <a href="/map/" className="nav-link">
-                Map
-              </a>
-              <a href="/zoos/" className="nav-link">
-                Zoos
-              </a>
-              <a href="/contact-us/" className="nav-link">
-                Contact us
-              </a>
-              <a
-                href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=uVdleYXKyMAVDa9i-0"
-                className="nav-link"
-                target="_blank"
-              >
-                Design
-              </a>
-            </nav>
-          </div>
+          )}
         </div>
       </div>
     </header>
