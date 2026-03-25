@@ -1,4 +1,18 @@
+import { useRef } from "react";
+import { MeetPetsSlider } from "./MeetPetsSlider";
+import { useSlider } from "../hooks/useSlider";
+
+const VIEWPORT = 1100;
+const CARD_SELECTOR = ".animals-card";
+
 export const Home = () => {
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const { offset, moveLeft, moveRight } = useSlider(
+    sliderRef,
+    VIEWPORT,
+    CARD_SELECTOR,
+  );
+
   return (
     <div className="page-landing">
       <main className="main">
@@ -86,10 +100,10 @@ export const Home = () => {
             </p>
           </div>
           <div className="slider-arrows">
-            <div className="left" id="sldr_left_arr"></div>
-            <div className="right" id="sldr_right_arr"></div>
+            <div className="left" onClick={moveLeft} />
+            <div className="right" onClick={moveRight} />
           </div>
-          <div className="slider-pets-in-zoo" id="slider"></div>
+          <MeetPetsSlider sliderRef={sliderRef} offset={offset} />
           <button className="btn btn--font-navy btn-favorite">
             <span>choose your favorite</span>
             <img src="./assets/icons/arrow.svg" alt="arrow" />
