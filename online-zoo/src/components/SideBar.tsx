@@ -6,7 +6,7 @@ import { usePets } from "../hooks/usePets";
 export const SideBar = () => {
   const [shrinked, setShrinked] = useState(true);
   const { favouritePetIds } = useFavourites();
-  const { pets } = usePets();
+  const { pets, petImageSource } = usePets();
   return (
     <section className="sidebar-container">
       <div className={`sidebar ${shrinked ? "shrinked" : ""}`}>
@@ -32,7 +32,17 @@ export const SideBar = () => {
               }
               const pet = pets.find((pet) => pet.id === item);
               if (!pet) return;
-              return <div className="item">{pet.name}</div>;
+              return (
+                <div className="item">
+                  <div className="item-image-container">
+                    <img src={petImageSource(pet)} alt={pet.commonName} />
+                  </div>
+                  <div className="text-container">
+                    <div>{pet.name}</div>
+                    <div>{pet.commonName}</div>
+                  </div>
+                </div>
+              );
             })}
         </div>
       </div>
