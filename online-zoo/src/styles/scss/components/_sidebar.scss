@@ -27,6 +27,15 @@
       .title {
         color: $white ;
         white-space: nowrap;
+        position: relative;
+
+        .count {
+          position: absolute;
+          color: $white;
+          font-size: 8px;
+          right: -10px;
+          bottom: -6px;
+        }
       }
 
       .double_arrow {

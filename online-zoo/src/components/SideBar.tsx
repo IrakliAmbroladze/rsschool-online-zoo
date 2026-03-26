@@ -7,12 +7,14 @@ export const SideBar = () => {
   const { favouritePetIds } = useFavourites();
   return (
     <section className="sidebar-container">
-      <div className={`sidebar ${shrinked && "shrinked"}`}>
+      <div className={`sidebar ${shrinked ? "shrinked" : ""}`}>
         <div className="sidebar-header">
           <div className="title">
             {shrinked ? <Star color="#dfe228" /> : "my favourite pets"}
+            <span className="count">
+              {favouritePetIds.length <= 0 ? "" : favouritePetIds.length}
+            </span>
           </div>
-
           <div
             className="double_arrow"
             onClick={() => setShrinked((prev) => !prev)}
