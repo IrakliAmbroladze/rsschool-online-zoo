@@ -2,6 +2,7 @@ import { type Ref } from "react";
 import type { Pet } from "../types/Pet";
 import { PETS } from "../types/PETS";
 import type { Status } from "../types/Status";
+import { Star, StarHalf } from "lucide-react";
 
 const getAnimalImage = (commonName: string) =>
   Object.keys(PETS).find((name) => commonName.toLowerCase().includes(name)) ??
@@ -19,6 +20,7 @@ export const MeetPetsSlider = ({ sliderRef, offset, pets, status }: Props) => {
     return <div className="loader">Loading pets...</div>;
   if (status === "error")
     return <p>Something went wrong. Please, refresh the page</p>;
+  const favourite_pet_ids = [1, 2, 4];
 
   return (
     <div
@@ -27,10 +29,24 @@ export const MeetPetsSlider = ({ sliderRef, offset, pets, status }: Props) => {
       className="slider-pets-in-zoo"
     >
       {pets.map((pet) => {
+        const is_favourite = favourite_pet_ids.includes(pet.id);
         const animal = getAnimalImage(pet.commonName);
         return (
           <div key={pet.commonName} className="animals-card">
-            <label>{pet.name}</label>
+            <label className="pet-name">{pet.name}</label>
+            <label
+              className={`add-favourite ${is_favourite ? "is-favourite" : ""}`}
+            >
+              {is_favourite ? (
+                <>
+                  <span>added as</span> <Star />
+                </>
+              ) : (
+                <>
+                  <span>add as</span> <StarHalf />
+                </>
+              )}
+            </label>
             <div className="cover">
               <img src={`./assets/images/${animal}.png`} alt={animal} />
             </div>

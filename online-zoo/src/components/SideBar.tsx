@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 import { useState } from "react";
 
 export const SideBar = () => {
-  const [shrinked, setShrinked] = useState(false);
+  const [shrinked, setShrinked] = useState(true);
   const list: string[] = ["one", "two"];
   return (
     <section className="sidebar-container">
