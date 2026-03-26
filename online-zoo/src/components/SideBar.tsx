@@ -34,6 +34,7 @@ export const SideBar = () => {
               if (!pet) return;
               return (
                 <div className="item">
+                  <div className="remove-favourite">remove</div>
                   <div className="item-image-container">
                     <img src={petImageSource(pet)} alt={pet.commonName} />
                   </div>

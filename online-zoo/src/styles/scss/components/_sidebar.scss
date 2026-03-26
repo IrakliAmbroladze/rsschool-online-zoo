@@ -66,6 +66,21 @@
         padding: 10px;
         gap: 20px;
         overflow: hidden;
+        position: relative;
+
+        .remove-favourite {
+          position: absolute;
+          padding: 4px 4px;
+          cursor: pointer;
+          user-select: none;
+          background-color: $orange;
+          top: 10px;
+          right: 10px;
+        }
+
+        .remove-favourite:hover {
+          background-color: $orange-dark
+        }
 
         .item-image-container {
           width: 50%;
