@@ -27,18 +27,3 @@ export default function App() {
     </div>
   );
 }
-
-// export default async function App() {
-//
-//   const page = document.body.className;
-//
-//   if (page === "page-zoos") {
-//     try {
-//       await Zoos();
-//     } catch (e) {
-//       console.error(e);
-//     }
-//   }
-//
-// }
-//

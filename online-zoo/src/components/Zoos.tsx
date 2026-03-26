@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Cameras } from "./Cameras";
 
 export const Zoos = () => {
   const [shrinked, setShrinked] = useState(false);
@@ -13,7 +14,7 @@ export const Zoos = () => {
           >
             <img src="/assets/icons/double_arrow.svg" alt="double_arrow" />
           </div>
-          <div id="cameras-pet-list" className="cameras-pet-list"></div>
+          <Cameras />
         </div>
       </section>
 
