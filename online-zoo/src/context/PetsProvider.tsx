@@ -1,0 +1,26 @@
+import { useEffect, useState, type ReactNode } from "react";
+import { PetsContext } from "./PetsContext";
+import { fetchPets } from "../lib/fetchPets";
+import type { Pet } from "../types/Pet";
+import type { Status } from "../types/Status";
+
+export const PetsProvider = ({ children }: { children: ReactNode }) => {
+  const [pets, setPets] = useState<Pet[]>([]);
+  const [status, setStatus] = useState<Status>("loading");
+  useEffect(() => {
+    fetchPets()
+      .then((data) => {
+        setPets(data);
+        setStatus("success");
+      })
+      .catch((err) => {
+        console.error(err instanceof Error ? err.message : err);
+        setStatus("error");
+      });
+  }, []);
+  return (
+    <PetsContext.Provider value={{ pets, status }}>
+      {children}
+    </PetsContext.Provider>
+  );
+};
