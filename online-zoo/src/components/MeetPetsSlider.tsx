@@ -21,6 +21,9 @@ export const MeetPetsSlider = ({ sliderRef, offset, pets, status }: Props) => {
   if (status === "error")
     return <p>Something went wrong. Please, refresh the page</p>;
   const favourite_pet_ids = [1, 2, 4];
+  const handleFavouriteClick = (id: number) => {
+    localStorage.setItem("favourites", JSON.stringify([id]));
+  };
 
   return (
     <div
@@ -36,6 +39,7 @@ export const MeetPetsSlider = ({ sliderRef, offset, pets, status }: Props) => {
             <label className="pet-name">{pet.name}</label>
             <label
               className={`add-favourite ${is_favourite ? "is-favourite" : ""}`}
+              onClick={() => handleFavouriteClick(pet.id)}
             >
               {is_favourite ? (
                 <>
