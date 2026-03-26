@@ -1,4 +1,53 @@
+import { useEffect, useRef, useState } from "react";
+import { MeetPetsSlider } from "./MeetPetsSlider";
+import { useSlider } from "../hooks/useSlider";
+import { FeedbacksSlider } from "./FeedbacksSlider";
+
+const CARD_SELECTOR = ".animals-card";
+const FEEDBACK_CARD_SELECTOR = ".feedback-card";
+
 export const Home = () => {
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const viewPortRef = useRef<HTMLDivElement>(null);
+  const feedbacksRef = useRef<HTMLDivElement>(null);
+  const feedbacksViewPortRef = useRef<HTMLDivElement>(null);
+  const [VIEWPORT, setVIEWPORT] = useState(0);
+  const [feedbacksVIEWPORT, setFeedbacksVIEWPORT] = useState(0);
+  const { offset, moveLeft, moveRight } = useSlider(
+    sliderRef,
+    VIEWPORT,
+    CARD_SELECTOR,
+  );
+  const {
+    offset: feedbacksOffset,
+    moveLeft: moveFeedbackLeft,
+    moveRight: moveFeedbackRight,
+  } = useSlider(feedbacksRef, feedbacksVIEWPORT, FEEDBACK_CARD_SELECTOR);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (viewPortRef.current) {
+        setVIEWPORT(viewPortRef.current.offsetWidth);
+      }
+      if (feedbacksViewPortRef.current) {
+        setFeedbacksVIEWPORT(feedbacksViewPortRef.current.offsetWidth);
+      }
+    };
+
+    const observer = new ResizeObserver(handleResize);
+
+    if (viewPortRef.current) observer.observe(viewPortRef.current);
+    if (feedbacksViewPortRef.current)
+      observer.observe(feedbacksViewPortRef.current);
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      observer.disconnect();
+    };
+  }, []);
   return (
     <div className="page-landing">
       <main className="main">
@@ -75,7 +124,7 @@ export const Home = () => {
         </div>
       </section>
       <section className="meet-pets">
-        <div className="container" id="pets-container">
+        <div ref={viewPortRef} className="container" id="pets-container">
           <div className="intro">
             <h2>Meet some our pets</h2>
             <p>
@@ -86,10 +135,10 @@ export const Home = () => {
             </p>
           </div>
           <div className="slider-arrows">
-            <div className="left" id="sldr_left_arr"></div>
-            <div className="right" id="sldr_right_arr"></div>
+            <div className="left" onClick={moveLeft} />
+            <div className="right" onClick={moveRight} />
           </div>
-          <div className="slider-pets-in-zoo" id="slider"></div>
+          <MeetPetsSlider sliderRef={sliderRef} offset={offset} />
           <button className="btn btn--font-navy btn-favorite">
             <span>choose your favorite</span>
             <img src="./assets/icons/arrow.svg" alt="arrow" />
@@ -106,11 +155,23 @@ export const Home = () => {
             feedback from past clients.
           </p>
         </div>
-        <div className="content-container" id="feedback-content-container">
-          <div id="feedback-container" className="feedback-container"></div>
+        <div
+          className="content-container"
+          id="feedback-content-container"
+          ref={feedbacksViewPortRef}
+        >
+          <FeedbacksSlider sliderRef={feedbacksRef} offset={feedbacksOffset} />
           <div className="slider-arrows">
-            <div className="left" id="sldr_prev_arrow"></div>
-            <div className="right" id="sldr_next_arrow"></div>
+            <div
+              className="left"
+              id="sldr_prev_arrow"
+              onClick={moveFeedbackLeft}
+            ></div>
+            <div
+              className="right"
+              id="sldr_next_arrow"
+              onClick={moveFeedbackRight}
+            ></div>
           </div>
 
           <button className="btn btn--pure-text-white btn-favorite">
