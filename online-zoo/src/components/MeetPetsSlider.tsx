@@ -3,7 +3,7 @@ import type { Pet } from "../types/Pet";
 import { PETS } from "../types/PETS";
 import type { Status } from "../types/Status";
 import { Star, StarHalf } from "lucide-react";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useFavourites } from "../hooks/useFavourites";
 
 const getAnimalImage = (commonName: string) =>
   Object.keys(PETS).find((name) => commonName.toLowerCase().includes(name)) ??
@@ -17,20 +17,11 @@ type Props = {
 };
 
 export const MeetPetsSlider = ({ sliderRef, offset, pets, status }: Props) => {
-  const [favouritePetIds, setFavouritePetIds] = useLocalStorage<number[]>(
-    "favourites",
-    [],
-  );
-
+  const { favouritePetIds, toggleFavourite } = useFavourites();
   if (status === "loading")
     return <div className="loader">Loading pets...</div>;
   if (status === "error")
     return <p>Something went wrong. Please, refresh the page</p>;
-  const handleFavouriteClick = (id: number) => {
-    setFavouritePetIds((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
-    );
-  };
   return (
     <div
       ref={sliderRef}
@@ -45,7 +36,7 @@ export const MeetPetsSlider = ({ sliderRef, offset, pets, status }: Props) => {
             <label className="pet-name">{pet.name}</label>
             <label
               className={`add-favourite ${is_favourite ? "is-favourite" : ""}`}
-              onClick={() => handleFavouriteClick(pet.id)}
+              onClick={() => toggleFavourite(pet.id)}
             >
               {is_favourite ? (
                 <>
