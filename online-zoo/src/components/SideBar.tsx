@@ -29,7 +29,11 @@ export const SideBar = () => {
           {!shrinked &&
             favouritePetIds.map((item) => {
               if (favouritePetIds.length > 0 && pets.length <= 0) {
-                return <div>something went wrong, please refresh the page</div>;
+                return (
+                  <div className="text-white">
+                    something went wrong, please refresh the page
+                  </div>
+                );
               }
               const pet = pets.find((pet) => pet.id === item);
               if (!pet) return;

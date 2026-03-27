@@ -28,7 +28,11 @@ export const FeedbacksSlider = ({ sliderRef, offset }: Props) => {
   if (status === "loading")
     return <div className="loader">Loading feedbacks...</div>;
   if (status === "error")
-    return <p>Something went wrong. Please, refresh the page</p>;
+    return (
+      <p className="text-white">
+        Something went wrong. Please, refresh the page
+      </p>
+    );
 
   return (
     <div
