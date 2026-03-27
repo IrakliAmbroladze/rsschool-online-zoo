@@ -4,6 +4,7 @@ import { PETS } from "../types/PETS";
 import type { Status } from "../types/Status";
 import { Star, StarHalf } from "lucide-react";
 import { useFavourites } from "../hooks/useFavourites";
+import { Link } from "react-router-dom";
 
 const getAnimalImage = (commonName: string) =>
   Object.keys(PETS).find((name) => commonName.toLowerCase().includes(name)) ??
@@ -53,10 +54,12 @@ export const MeetPetsSlider = ({ sliderRef, offset, pets, status }: Props) => {
             </div>
             <div className="title">{pet.commonName}</div>
             <p>{pet.description}</p>
-            <button className="btn btn--pure-text-orange">
-              <span>view live cam</span>
-              <img src="./assets/icons/arrow.svg" alt="arrow" />
-            </button>
+            <Link to={`zoos?petId=${pet.id}`}>
+              <button className="btn btn--pure-text-orange">
+                <span>view live cam</span>
+                <img src="./assets/icons/arrow.svg" alt="arrow" />
+              </button>
+            </Link>
           </div>
         );
       })}
