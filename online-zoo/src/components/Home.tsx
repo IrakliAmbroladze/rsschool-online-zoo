@@ -162,6 +162,11 @@ export const Home = () => {
         </div>
       </section>
       <section className="pay-and-feed"></section>
+      <section id="touch-pet" className="touch-pet">
+        <div className="touch-pet__cover">
+          <img src="/assets/images/touch.jpg" alt="touch-pet" />
+        </div>
+      </section>
     </div>
   );
 };
