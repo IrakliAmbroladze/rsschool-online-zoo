@@ -3,6 +3,7 @@ import { useSlider } from "../hooks/useSlider";
 import { FeedbacksSlider } from "./FeedbacksSlider";
 import { MeetPets } from "./MeetPets";
 import { SideBar } from "./SideBar";
+import { CareForAnimals } from "./CareForAnimals/CareForAnimals";
 
 const CARD_SELECTOR = ".animals-card";
 const FEEDBACK_CARD_SELECTOR = ".feedback-card";
@@ -162,6 +163,7 @@ export const Home = () => {
         </div>
       </section>
       <section className="pay-and-feed"></section>
+      <CareForAnimals />
       <section id="touch-pet" className="touch-pet">
         <div className="touch-pet__cover">
           <img src="/assets/images/touch.jpg" alt="touch-pet" />
