@@ -11,10 +11,10 @@ export const PetCard = ({
 }): JSX.Element => {
   return (
     <div className={style.card}>
-      <div className={style.card__cover}>
+      <div className={style.cover}>
         <img src={imgSource} alt={imgAlt} />
       </div>
-      <p>{description}</p>
+      <p className={style.description}>{description}</p>
       <button className="btn btn--pure-text-orange">
         <span>view live cam</span>
         <img src="./assets/icons/arrow.svg" alt="arrow" />
