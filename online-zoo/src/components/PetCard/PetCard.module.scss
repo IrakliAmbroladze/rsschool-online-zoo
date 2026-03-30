@@ -9,4 +9,12 @@
       object-fit: cover;
     }
   }
+
+  .card__description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: white
+  }
 }

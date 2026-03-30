@@ -14,7 +14,7 @@ export const PetCard = ({
       <div className={style.card__cover}>
         <img src={imgSource} alt={imgAlt} />
       </div>
-      <p>{description}</p>
+      <p className={style.card__description}>{description}</p>
       <button className="btn btn--pure-text-orange">
         <span>view live cam</span>
         <img src="./assets/icons/arrow.svg" alt="arrow" />
