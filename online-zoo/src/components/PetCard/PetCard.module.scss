@@ -34,9 +34,26 @@
   margin: 20px auto;
   width: 142px;
   height: 75px;
+  transition: background-color 200ms ease;
 
   span {
     text-transform: uppercase;
     margin-right: 10px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .arrow {
+    width: 24px;
+    height: 24px;
+    background-color: v.$orange;
+
+    mask: url("/assets/icons/arrow.svg") center / contain no-repeat;
+    -webkit-mask: url("/assets/icons/arrow.svg") center / contain no-repeat;
+
+  }
+
+  &:hover .arrow {
+    background-color: white;
   }
 }

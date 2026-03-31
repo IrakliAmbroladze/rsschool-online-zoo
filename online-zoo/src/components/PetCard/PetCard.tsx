@@ -18,7 +18,8 @@ export const PetCard = ({
       <div className={style.button}>
         <button className={`${style.button} btn btn--pure-text-orange`}>
           <span>feed</span>
-          <img src="./assets/icons/arrow.svg" alt="arrow" />
+          <div className={style.arrow}></div>
+          {/* <img src="./assets/icons/arrow.svg" alt="arrow" /> */}
         </button>
       </div>
     </div>
