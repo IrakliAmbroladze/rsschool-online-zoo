@@ -9,6 +9,7 @@ export const CareForAnimals = () => {
           imgSource="/assets/images/panda.png"
           imgAlt="panda"
           description="Your $30 could give Lucas  a slice of panda cake, made with our secret recipe."
+          btnText="feed"
         />
       </div>
     </section>
