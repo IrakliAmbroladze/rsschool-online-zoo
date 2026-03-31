@@ -4,7 +4,7 @@ import style from "./CareForAnimals.module.scss";
 export const CareForAnimals = () => {
   return (
     <section className={style.care}>
-      <div className={style.care__container}>
+      <div className={style.container}>
         <PetCard
           imgSource="/assets/images/panda.png"
           imgAlt="panda"
