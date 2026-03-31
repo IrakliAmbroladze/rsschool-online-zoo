@@ -29,3 +29,14 @@
   width: 254px;
   margin: 15px auto;
 }
+
+.button {
+  margin: 20px auto;
+  width: 142px;
+  height: 75px;
+
+  span {
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+}
