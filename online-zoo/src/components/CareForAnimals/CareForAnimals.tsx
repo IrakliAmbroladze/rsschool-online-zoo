@@ -1,3 +1,4 @@
+import { DotNavigation } from "../DotNavigation/DotNavigation";
 import { PetCard } from "../PetCard/PetCard";
 import style from "./CareForAnimals.module.scss";
 
@@ -11,6 +12,7 @@ export const CareForAnimals = () => {
           description="Your $30 could give Lucas  a slice of panda cake, made with our secret recipe."
           btnText="feed"
         />
+        <DotNavigation />
       </div>
     </section>
   );
