@@ -1,0 +1,15 @@
+@use "../../styles/scss/abstracts/mixins" as m;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 92px;
+  margin: 30px auto;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border: 1px solid black;
+  border-radius: 100%;
+}
