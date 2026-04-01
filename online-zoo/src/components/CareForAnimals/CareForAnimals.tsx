@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { DotNavigation } from "../DotNavigation/DotNavigation";
 import { PetCard } from "../PetCard/PetCard";
 import style from "./CareForAnimals.module.scss";
 
 export const CareForAnimals = () => {
+  const [activeCardNumber, setActiveCardNumber] = useState<number>(0);
+  const getActiveDotNumber = (value: number) => {
+    setActiveCardNumber(value);
+  };
+  console.log("active dot is: ", activeCardNumber);
   return (
     <section className={style.care}>
       <div className={style.container}>
@@ -12,7 +18,7 @@ export const CareForAnimals = () => {
           description="Your $30 could give Lucas  a slice of panda cake, made with our secret recipe."
           btnText="feed"
         />
-        <DotNavigation />
+        <DotNavigation getActiveDotNumber={getActiveDotNumber} />
       </div>
     </section>
   );

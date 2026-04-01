@@ -5,7 +5,7 @@ export const DotNavigation = ({
   getActiveDotNumber,
 }: {
   dotNumber?: number;
-  getActiveDotNumber?: (dotNumber: number) => number;
+  getActiveDotNumber?: (dotNumber: number) => void;
 }) => {
   const [activeDot, setActiveDot] = useState<number>(0);
   const dotsArr = Array.from({ length: dotNumber });
