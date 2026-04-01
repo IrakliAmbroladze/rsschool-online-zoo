@@ -7,7 +7,10 @@ export const DotNavigation = ({ dotNumber = 4 }: { dotNumber?: number }) => {
     <div className={style.container}>
       {dotsArr.map((_, index) => {
         return (
-          <div className={`${style.dot} ${style.active}`} key={index}></div>
+          <div
+            className={`${style.dot} ${index === activeDot ? style.active : ""}`}
+            key={index}
+          ></div>
         );
       })}
     </div>
