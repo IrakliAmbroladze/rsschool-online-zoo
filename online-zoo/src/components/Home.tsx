@@ -4,6 +4,8 @@ import { FeedbacksSlider } from "./FeedbacksSlider";
 import { MeetPets } from "./MeetPets";
 import { SideBar } from "./SideBar";
 import { CareForAnimals } from "./CareForAnimals/CareForAnimals";
+import { Link } from "react-router-dom";
+import { TouchPet } from "./TouchPet/TouchPet";
 
 const CARD_SELECTOR = ".animals-card";
 const FEEDBACK_CARD_SELECTOR = ".feedback-card";
@@ -61,9 +63,11 @@ export const Home = () => {
               Explore the exciting and mysterious world of wild animals in a
               natural setting without leaving your home.
             </h2>
-            <button className="btn btn--orange">
-              view live cam <img src="./assets/icons/arrow.svg" alt="arrow" />
-            </button>
+            <Link to={`zoos?petId=0`}>
+              <button className="btn btn--orange">
+                view live cam <img src="./assets/icons/arrow.svg" alt="arrow" />
+              </button>
+            </Link>
           </div>
         </div>
         <div className="cover-image">
@@ -164,11 +168,7 @@ export const Home = () => {
       </section>
       {/* <section className="pay-and-feed"></section> */}
       <CareForAnimals />
-      <section id="touch-pet" className="touch-pet">
-        <div className="touch-pet__cover">
-          <img src="/assets/images/touch.jpg" alt="touch-pet" />
-        </div>
-      </section>
+      <TouchPet />
     </div>
   );
 };

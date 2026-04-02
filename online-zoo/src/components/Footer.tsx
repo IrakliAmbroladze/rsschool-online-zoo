@@ -6,14 +6,18 @@ export const Footer = () => {
       <div className="container">
         <div className="upper-footer">
           <div className="logos">
+            <Link
+              to="https://geolab.edu.ge/"
+              className="logo-geolab"
+              target="_blank"
+            >
+              <img src="../assets/images/geolab.svg" alt="logo-geolab" />
+            </Link>
             <div className="logo-zoo">
               <img src="../assets/images/logo-white.svg" alt="logo-white" />
             </div>
             <Link to="/" className="logo-yem">
               <img src="../assets/images/yem.svg" alt="logo-yem" />
-            </Link>
-            <Link to="/" className="logo-rs">
-              <img src="../assets/images/rs_school_js logo.svg" alt="logo-rs" />
             </Link>
           </div>
           <nav className="nav">

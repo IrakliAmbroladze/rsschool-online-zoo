@@ -1,0 +1,32 @@
+@use "../../styles/scss/abstracts/variables" as v;
+@use "../../styles/scss/abstracts/mixins" as m;
+
+
+.touchPet {
+  margin: 80px 0;
+
+  .cover {
+    width: 100%;
+    height: 190px;
+
+    @include m.respond-to(sm) {
+      height: 380px;
+    }
+
+    @include m.respond-to(md) {
+      height: 650px;
+    }
+
+    @include m.respond-to(lg) {
+      width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
