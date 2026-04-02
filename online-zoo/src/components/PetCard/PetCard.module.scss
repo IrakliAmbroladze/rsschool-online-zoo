@@ -6,6 +6,10 @@
   height: 570px;
   border-radius: 5px;
   background-color: v.$navy;
+
+  @include m.respond-to(sm) {
+    width: 600px;
+  }
 }
 
 .cover {
