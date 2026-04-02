@@ -162,7 +162,7 @@ export const Home = () => {
           </button>
         </div>
       </section>
-      <section className="pay-and-feed"></section>
+      {/* <section className="pay-and-feed"></section> */}
       <CareForAnimals />
       <section id="touch-pet" className="touch-pet">
         <div className="touch-pet__cover">
