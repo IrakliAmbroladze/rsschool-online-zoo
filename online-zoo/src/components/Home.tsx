@@ -5,6 +5,7 @@ import { MeetPets } from "./MeetPets";
 import { SideBar } from "./SideBar";
 import { CareForAnimals } from "./CareForAnimals/CareForAnimals";
 import { Link } from "react-router-dom";
+import { TouchPet } from "./TouchPet/TouchPet";
 
 const CARD_SELECTOR = ".animals-card";
 const FEEDBACK_CARD_SELECTOR = ".feedback-card";
@@ -167,11 +168,7 @@ export const Home = () => {
       </section>
       {/* <section className="pay-and-feed"></section> */}
       <CareForAnimals />
-      <section id="touch-pet" className="touch-pet">
-        <div className="touch-pet__cover">
-          <img src="/assets/images/touch.jpg" alt="touch-pet" />
-        </div>
-      </section>
+      <TouchPet />
     </div>
   );
 };
