@@ -16,11 +16,13 @@ export const PetCard = ({
       <div className={style.cover}>
         <img src={imgSource} alt={imgAlt} />
       </div>
-      <p className={style.description}>{description}</p>
-      <button className={`${style.button} btn btn--pure-text-orange`}>
-        <span>{btnText}</span>
-        <div className={style.arrow}></div>
-      </button>
+      <div className={style.textContent}>
+        <p className={style.description}>{description}</p>
+        <button className={`${style.button} btn btn--pure-text-orange`}>
+          <span>{btnText}</span>
+          <div className={style.arrow}></div>
+        </button>
+      </div>
     </div>
   );
 };
